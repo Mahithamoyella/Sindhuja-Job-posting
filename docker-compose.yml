@@ -2,6 +2,7 @@ version: '3.8'
 
 services:
   backend:
+    container_name: job-posting-backend1
     build: ./Backend
     ports:
       - "3206:3206"
@@ -11,18 +12,22 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: admin123
       POSTGRES_DB: job_portal
+      POSTGRES_HOST: postgres  # This tells backend how to reach DB inside Docker
 
   employee-posting:
+    container_name: job-posting-employee1
     build: ./Employee-posting
     ports:
       - "8011:80"
 
   hr-posting:
+    container_name: job-posting-hr1
     build: ./HR-posting
     ports:
       - "8012:80"
 
   postgres:
+    container_name: job-posting-db1
     image: postgres:14
     ports:
       - "5206:5432"
