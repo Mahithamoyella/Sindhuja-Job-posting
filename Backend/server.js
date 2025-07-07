@@ -2,7 +2,7 @@ const express = require('express');
 const { Pool } = require('pg');
 const cors = require('cors');
 const app = express();
-const port = 3057;
+const port = 3206;
 
 // Middleware
 app.use(cors());
@@ -13,7 +13,7 @@ const pool = new Pool({
     user: 'postgres', // Replace with your PostgreSQL username
     host: 'postgres',
     database: 'job_portal',
-    password: 'admin834', // Replace with your PostgreSQL password
+    password: 'admin123', // Replace with your PostgreSQL password
     port: 5432,
 });
 
@@ -119,5 +119,5 @@ app.post('/api/jobs', async (req, res) => {
 
 // Start the server
 app.listen(port, () => {
-    console.log(`Server running at http://54.81.30.45:${port}`);
+    console.log(`Server running at http://3.85.61.23:${port}`);
 });

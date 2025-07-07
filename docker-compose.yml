@@ -4,31 +4,31 @@ services:
   backend:
     build: ./Backend
     ports:
-      - "3001:3001"
+      - "3206:3206"
     depends_on:
       - postgres
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: admin834
+      POSTGRES_PASSWORD: admin123
       POSTGRES_DB: job_portal
 
   employee-posting:
     build: ./Employee-posting
     ports:
-      - "8001:80"
+      - "8011:80"
 
   hr-posting:
     build: ./HR-posting
     ports:
-      - "8002:80"
+      - "8012:80"
 
   postgres:
     image: postgres:14
     ports:
-      - "5433:5432"
+      - "5206:5432"
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: admin834
+      POSTGRES_PASSWORD: admin123
       POSTGRES_DB: job_portal
     volumes:
       - postgres_data:/var/lib/postgresql/data
